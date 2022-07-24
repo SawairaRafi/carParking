@@ -1,0 +1,995 @@
+$comment
+	File created using the following command:
+		vcd file car_parking_system.msim.vcd -direction
+$end
+$date
+	Mon Jun 20 19:03:10 2022
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module car_parking_system_vlg_vec_tst $end
+$var reg 1 ! back_sensor $end
+$var reg 1 " clk $end
+$var reg 1 # front_sensor $end
+$var reg 1 $ level1_movement $end
+$var reg 1 % level2_movement $end
+$var reg 1 & level3_movement $end
+$var reg 2 ' password [1:0] $end
+$var reg 1 ( push_btn_clk $end
+$var reg 1 ) rs10 $end
+$var reg 1 * rst $end
+$var reg 2 + user_name [1:0] $end
+$var reg 1 , user_type $end
+$var reg 3 - vehicle_type [2:0] $end
+$var wire 1 . backGateOpens $end
+$var wire 1 / cathode0 [6] $end
+$var wire 1 0 cathode0 [5] $end
+$var wire 1 1 cathode0 [4] $end
+$var wire 1 2 cathode0 [3] $end
+$var wire 1 3 cathode0 [2] $end
+$var wire 1 4 cathode0 [1] $end
+$var wire 1 5 cathode0 [0] $end
+$var wire 1 6 cathode1 [6] $end
+$var wire 1 7 cathode1 [5] $end
+$var wire 1 8 cathode1 [4] $end
+$var wire 1 9 cathode1 [3] $end
+$var wire 1 : cathode1 [2] $end
+$var wire 1 ; cathode1 [1] $end
+$var wire 1 < cathode1 [0] $end
+$var wire 1 = cathode2 [6] $end
+$var wire 1 > cathode2 [5] $end
+$var wire 1 ? cathode2 [4] $end
+$var wire 1 @ cathode2 [3] $end
+$var wire 1 A cathode2 [2] $end
+$var wire 1 B cathode2 [1] $end
+$var wire 1 C cathode2 [0] $end
+$var wire 1 D cathode3 [6] $end
+$var wire 1 E cathode3 [5] $end
+$var wire 1 F cathode3 [4] $end
+$var wire 1 G cathode3 [3] $end
+$var wire 1 H cathode3 [2] $end
+$var wire 1 I cathode3 [1] $end
+$var wire 1 J cathode3 [0] $end
+$var wire 1 K gateOpens $end
+$var wire 1 L lcd_db [7] $end
+$var wire 1 M lcd_db [6] $end
+$var wire 1 N lcd_db [5] $end
+$var wire 1 O lcd_db [4] $end
+$var wire 1 P lcd_db [3] $end
+$var wire 1 Q lcd_db [2] $end
+$var wire 1 R lcd_db [1] $end
+$var wire 1 S lcd_db [0] $end
+$var wire 1 T lcd_e $end
+$var wire 1 U lcd_rs $end
+$var wire 1 V lcd_rw $end
+$var wire 1 W level [1] $end
+$var wire 1 X level [0] $end
+$var wire 1 Y noslot $end
+$var wire 1 Z slotAvail $end
+$var wire 1 [ sampler $end
+$scope module i1 $end
+$var wire 1 \ gnd $end
+$var wire 1 ] vcc $end
+$var wire 1 ^ unknown $end
+$var tri1 1 _ devclrn $end
+$var tri1 1 ` devpor $end
+$var tri1 1 a devoe $end
+$var wire 1 b push_btn_clk~input_o $end
+$var wire 1 c level[0]~output_o $end
+$var wire 1 d level[1]~output_o $end
+$var wire 1 e slotAvail~output_o $end
+$var wire 1 f noslot~output_o $end
+$var wire 1 g gateOpens~output_o $end
+$var wire 1 h backGateOpens~output_o $end
+$var wire 1 i cathode0[0]~output_o $end
+$var wire 1 j cathode0[1]~output_o $end
+$var wire 1 k cathode0[2]~output_o $end
+$var wire 1 l cathode0[3]~output_o $end
+$var wire 1 m cathode0[4]~output_o $end
+$var wire 1 n cathode0[5]~output_o $end
+$var wire 1 o cathode0[6]~output_o $end
+$var wire 1 p cathode1[0]~output_o $end
+$var wire 1 q cathode1[1]~output_o $end
+$var wire 1 r cathode1[2]~output_o $end
+$var wire 1 s cathode1[3]~output_o $end
+$var wire 1 t cathode1[4]~output_o $end
+$var wire 1 u cathode1[5]~output_o $end
+$var wire 1 v cathode1[6]~output_o $end
+$var wire 1 w cathode2[0]~output_o $end
+$var wire 1 x cathode2[1]~output_o $end
+$var wire 1 y cathode2[2]~output_o $end
+$var wire 1 z cathode2[3]~output_o $end
+$var wire 1 { cathode2[4]~output_o $end
+$var wire 1 | cathode2[5]~output_o $end
+$var wire 1 } cathode2[6]~output_o $end
+$var wire 1 ~ cathode3[0]~output_o $end
+$var wire 1 !! cathode3[1]~output_o $end
+$var wire 1 "! cathode3[2]~output_o $end
+$var wire 1 #! cathode3[3]~output_o $end
+$var wire 1 $! cathode3[4]~output_o $end
+$var wire 1 %! cathode3[5]~output_o $end
+$var wire 1 &! cathode3[6]~output_o $end
+$var wire 1 '! lcd_e~output_o $end
+$var wire 1 (! lcd_rs~output_o $end
+$var wire 1 )! lcd_rw~output_o $end
+$var wire 1 *! lcd_db[0]~output_o $end
+$var wire 1 +! lcd_db[1]~output_o $end
+$var wire 1 ,! lcd_db[2]~output_o $end
+$var wire 1 -! lcd_db[3]~output_o $end
+$var wire 1 .! lcd_db[4]~output_o $end
+$var wire 1 /! lcd_db[5]~output_o $end
+$var wire 1 0! lcd_db[6]~output_o $end
+$var wire 1 1! lcd_db[7]~output_o $end
+$var wire 1 2! clk~input_o $end
+$var wire 1 3! vehicle_type[0]~input_o $end
+$var wire 1 4! vehicle_type[2]~input_o $end
+$var wire 1 5! vehicle_type[1]~input_o $end
+$var wire 1 6! back_sensor~input_o $end
+$var wire 1 7! password[0]~input_o $end
+$var wire 1 8! password[1]~input_o $end
+$var wire 1 9! user_name[0]~input_o $end
+$var wire 1 :! user_name[1]~input_o $end
+$var wire 1 ;! user_type~input_o $end
+$var wire 1 <! state~46_combout $end
+$var wire 1 =! level1_movement~input_o $end
+$var wire 1 >! level2_movement~input_o $end
+$var wire 1 ?! level3_movement~input_o $end
+$var wire 1 @! Selector23~0_combout $end
+$var wire 1 A! rst~input_o $end
+$var wire 1 B! state.slotsLevel_3~q $end
+$var wire 1 C! Selector38~1_combout $end
+$var wire 1 D! slotCounter2~5_combout $end
+$var wire 1 E! slotCounter2[0]~1_combout $end
+$var wire 1 F! slotCounter2~6_combout $end
+$var wire 1 G! slotCounter2~3_combout $end
+$var wire 1 H! slotCounter2[2]~0_combout $end
+$var wire 1 I! slotCounter2~4_combout $end
+$var wire 1 J! slotCounter2~2_combout $end
+$var wire 1 K! Selector38~0_combout $end
+$var wire 1 L! Selector38~3_combout $end
+$var wire 1 M! Selector38~2_combout $end
+$var wire 1 N! Selector38~4_combout $end
+$var wire 1 O! Selector40~0_combout $end
+$var wire 1 P! Selector40~1_combout $end
+$var wire 1 Q! Selector40~2_combout $end
+$var wire 1 R! Selector40~3_combout $end
+$var wire 1 S! Selector41~0_combout $end
+$var wire 1 T! Selector40~4_combout $end
+$var wire 1 U! Selector41~1_combout $end
+$var wire 1 V! Selector41~2_combout $end
+$var wire 1 W! LessThan5~0_combout $end
+$var wire 1 X! Selector42~0_combout $end
+$var wire 1 Y! Selector16~1_combout $end
+$var wire 1 Z! money_count[3]~6_combout $end
+$var wire 1 [! money_count[7]~8_combout $end
+$var wire 1 \! money_count[4]~14 $end
+$var wire 1 ]! money_count[5]~15_combout $end
+$var wire 1 ^! money_count[5]~16 $end
+$var wire 1 _! money_count[6]~17_combout $end
+$var wire 1 `! money_count[6]~18 $end
+$var wire 1 a! money_count[7]~19_combout $end
+$var wire 1 b! Money_Change[2]~6_combout $end
+$var wire 1 c! Selector26~0_combout $end
+$var wire 1 d! state.vanCharge~q $end
+$var wire 1 e! rs10~input_o $end
+$var wire 1 f! Selector21~0_combout $end
+$var wire 1 g! state.slotsLevel_1~q $end
+$var wire 1 h! Selector34~0_combout $end
+$var wire 1 i! Selector34~1_combout $end
+$var wire 1 j! Selector34~2_combout $end
+$var wire 1 k! LessThan0~0_combout $end
+$var wire 1 l! Selector35~2_combout $end
+$var wire 1 m! Selector36~0_combout $end
+$var wire 1 n! Selector36~1_combout $end
+$var wire 1 o! Selector35~5_combout $end
+$var wire 1 p! Selector35~3_combout $end
+$var wire 1 q! Selector35~4_combout $end
+$var wire 1 r! LessThan3~0_combout $end
+$var wire 1 s! LessThan11~0_combout $end
+$var wire 1 t! Selector9~0_combout $end
+$var wire 1 u! Selector24~0_combout $end
+$var wire 1 v! state.bikeCharge~q $end
+$var wire 1 w! Selector27~1_combout $end
+$var wire 1 x! Money_Change~5_combout $end
+$var wire 1 y! money_count[7]~11_combout $end
+$var wire 1 z! money_count[7]~10_combout $end
+$var wire 1 {! WideOr0~0_combout $end
+$var wire 1 |! Money_Change[4]~9_combout $end
+$var wire 1 }! money_count[7]~9_combout $end
+$var wire 1 ~! money_count[7]~12_combout $end
+$var wire 1 !" money_count[3]~7 $end
+$var wire 1 "" money_count[4]~13_combout $end
+$var wire 1 #" money_count[7]~5_combout $end
+$var wire 1 $" LessThan4~0_combout $end
+$var wire 1 %" Selector25~0_combout $end
+$var wire 1 &" state.carCharge~q $end
+$var wire 1 '" state~41_combout $end
+$var wire 1 (" state~42_combout $end
+$var wire 1 )" front_sensor~input_o $end
+$var wire 1 *" state~40_combout $end
+$var wire 1 +" state~43_combout $end
+$var wire 1 ," state~44_combout $end
+$var wire 1 -" state~54_combout $end
+$var wire 1 ." state~45_combout $end
+$var wire 1 /" state.backGateOpen~q $end
+$var wire 1 0" Selector14~0_combout $end
+$var wire 1 1" Selector13~0_combout $end
+$var wire 1 2" Selector27~0_combout $end
+$var wire 1 3" Selector30~3_combout $end
+$var wire 1 4" Selector30~2_combout $end
+$var wire 1 5" Selector30~4_combout $end
+$var wire 1 6" state.user1~q $end
+$var wire 1 7" Selector31~0_combout $end
+$var wire 1 8" Selector31~1_combout $end
+$var wire 1 9" state.user2~q $end
+$var wire 1 :" Selector27~3_combout $end
+$var wire 1 ;" Selector32~1_combout $end
+$var wire 1 <" Selector32~2_combout $end
+$var wire 1 =" state.user3~q $end
+$var wire 1 >" Selector32~0_combout $end
+$var wire 1 ?" Selector29~0_combout $end
+$var wire 1 @" levels[0]~5_combout $end
+$var wire 1 A" Selector27~2_combout $end
+$var wire 1 B" Selector27~4_combout $end
+$var wire 1 C" state.gateOpen~q $end
+$var wire 1 D" Selector16~2_combout $end
+$var wire 1 E" Selector16~0_combout $end
+$var wire 1 F" Selector16~3_combout $end
+$var wire 1 G" state.idle~q $end
+$var wire 1 H" state~52_combout $end
+$var wire 1 I" state.freeSlots~q $end
+$var wire 1 J" state~49_combout $end
+$var wire 1 K" state~47_combout $end
+$var wire 1 L" state~48_combout $end
+$var wire 1 M" state~50_combout $end
+$var wire 1 N" state~51_combout $end
+$var wire 1 O" state.vip~q $end
+$var wire 1 P" Selector29~1_combout $end
+$var wire 1 Q" Selector29~2_combout $end
+$var wire 1 R" state.user0~q $end
+$var wire 1 S" Selector14~1_combout $end
+$var wire 1 T" Selector14~2_combout $end
+$var wire 1 U" LessThan2~0_combout $end
+$var wire 1 V" Selector17~0_combout $end
+$var wire 1 W" Selector17~1_combout $end
+$var wire 1 X" state.userType~q $end
+$var wire 1 Y" state~53_combout $end
+$var wire 1 Z" state.visitor~feeder_combout $end
+$var wire 1 [" state.visitor~q $end
+$var wire 1 \" Selector20~0_combout $end
+$var wire 1 ]" Selector20~1_combout $end
+$var wire 1 ^" state.vehicleType~q $end
+$var wire 1 _" Selector22~0_combout $end
+$var wire 1 `" state.slotsLevel_2~q $end
+$var wire 1 a" levels[1]~0_combout $end
+$var wire 1 b" levels[0]~4_combout $end
+$var wire 1 c" levels[0]~1_combout $end
+$var wire 1 d" levels[0]~2_combout $end
+$var wire 1 e" levels[0]~3_combout $end
+$var wire 1 f" levels[0]~6_combout $end
+$var wire 1 g" levels[1]~7_combout $end
+$var wire 1 h" Selector45~0_combout $end
+$var wire 1 i" slotAvails~q $end
+$var wire 1 j" Selector46~0_combout $end
+$var wire 1 k" noslots~q $end
+$var wire 1 l" Selector15~0_combout $end
+$var wire 1 m" gate~q $end
+$var wire 1 n" backGate~0_combout $end
+$var wire 1 o" backGate~q $end
+$var wire 1 p" Selector9~1_combout $end
+$var wire 1 q" Selector9~3_combout $end
+$var wire 1 r" Selector9~4_combout $end
+$var wire 1 s" Add9~0_combout $end
+$var wire 1 t" Selector9~2_combout $end
+$var wire 1 u" Selector9~5_combout $end
+$var wire 1 v" Money_Change[1]~feeder_combout $end
+$var wire 1 w" Money_Change[2]~7_combout $end
+$var wire 1 x" Money_Change[2]~8_combout $end
+$var wire 1 y" Money_Change~5_wirecell_combout $end
+$var wire 1 z" ~GND~combout $end
+$var wire 1 {" U1|Equal14~0_combout $end
+$var wire 1 |" U1|cathodes[1]~0_combout $end
+$var wire 1 }" U1|cathodes[2]~1_combout $end
+$var wire 1 ~" U1|cathodes[3]~2_combout $end
+$var wire 1 !# U1|cathodes[5]~3_combout $end
+$var wire 1 "# U1|cathodes[6]~4_combout $end
+$var wire 1 ## Money_Change[5]~14 $end
+$var wire 1 $# Money_Change[6]~16 $end
+$var wire 1 %# Money_Change[7]~17_combout $end
+$var wire 1 &# Add9~1 $end
+$var wire 1 '# Add9~3 $end
+$var wire 1 (# Add9~5 $end
+$var wire 1 )# Add9~7 $end
+$var wire 1 *# Add9~8_combout $end
+$var wire 1 +# Add8~1 $end
+$var wire 1 ,# Add8~3 $end
+$var wire 1 -# Add8~5 $end
+$var wire 1 .# Add8~8_combout $end
+$var wire 1 /# Add8~10_combout $end
+$var wire 1 0# Money_Change[4]~11_combout $end
+$var wire 1 1# Money_Change[6]~15_combout $end
+$var wire 1 2# Add9~6_combout $end
+$var wire 1 3# Add8~4_combout $end
+$var wire 1 4# Add8~6_combout $end
+$var wire 1 5# Add8~0_combout $end
+$var wire 1 6# Add9~2_combout $end
+$var wire 1 7# Money_Change[4]~19_combout $end
+$var wire 1 8# Money_Change[4]~10_combout $end
+$var wire 1 9# Money_Change[4]~12_combout $end
+$var wire 1 :# Money_Change[5]~13_combout $end
+$var wire 1 ;# Add8~2_combout $end
+$var wire 1 <# Add9~4_combout $end
+$var wire 1 =# Add8~7_combout $end
+$var wire 1 ># U2|cathodes[0]~9_combout $end
+$var wire 1 ?# U2|cathodes[1]~14_combout $end
+$var wire 1 @# U2|cathodes[2]~15_combout $end
+$var wire 1 A# U2|cathodes[3]~10_combout $end
+$var wire 1 B# U2|cathodes[4]~11_combout $end
+$var wire 1 C# U2|cathodes[5]~12_combout $end
+$var wire 1 D# U2|cathodes[6]~13_combout $end
+$var wire 1 E# U4|cathodes[0]~9_combout $end
+$var wire 1 F# U4|cathodes[1]~14_combout $end
+$var wire 1 G# U4|cathodes[2]~15_combout $end
+$var wire 1 H# U4|cathodes[3]~10_combout $end
+$var wire 1 I# U4|cathodes[4]~11_combout $end
+$var wire 1 J# U4|cathodes[5]~12_combout $end
+$var wire 1 K# U4|cathodes[6]~13_combout $end
+$var wire 1 L# passwordCount [1] $end
+$var wire 1 M# passwordCount [0] $end
+$var wire 1 N# slotCounter3 [2] $end
+$var wire 1 O# slotCounter3 [1] $end
+$var wire 1 P# slotCounter3 [0] $end
+$var wire 1 Q# levels [1] $end
+$var wire 1 R# levels [0] $end
+$var wire 1 S# slotCounter2 [2] $end
+$var wire 1 T# slotCounter2 [1] $end
+$var wire 1 U# slotCounter2 [0] $end
+$var wire 1 V# slotCounter1 [2] $end
+$var wire 1 W# slotCounter1 [1] $end
+$var wire 1 X# slotCounter1 [0] $end
+$var wire 1 Y# Money_Change [7] $end
+$var wire 1 Z# Money_Change [6] $end
+$var wire 1 [# Money_Change [5] $end
+$var wire 1 \# Money_Change [4] $end
+$var wire 1 ]# Money_Change [3] $end
+$var wire 1 ^# Money_Change [2] $end
+$var wire 1 _# Money_Change [1] $end
+$var wire 1 `# Money_Change [0] $end
+$var wire 1 a# money_count [7] $end
+$var wire 1 b# money_count [6] $end
+$var wire 1 c# money_count [5] $end
+$var wire 1 d# money_count [4] $end
+$var wire 1 e# money_count [3] $end
+$var wire 1 f# money_count [2] $end
+$var wire 1 g# money_count [1] $end
+$var wire 1 h# money_count [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+1"
+0#
+0$
+0%
+0&
+b0 '
+0(
+0)
+0*
+b0 +
+0,
+b0 -
+0.
+05
+04
+03
+02
+01
+00
+1/
+0<
+0;
+0:
+09
+08
+07
+16
+0C
+0B
+0A
+0@
+0?
+0>
+1=
+0J
+0I
+0H
+0G
+0F
+0E
+1D
+0K
+0S
+0R
+0Q
+0P
+0O
+0N
+0M
+0L
+0T
+0U
+0V
+0X
+0W
+0Y
+0Z
+x[
+0\
+1]
+x^
+1_
+1`
+1a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+1o
+0p
+0q
+0r
+0s
+0t
+0u
+1v
+0w
+0x
+0y
+0z
+0{
+0|
+1}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+1&!
+0'!
+0(!
+0)!
+0*!
+0+!
+0,!
+0-!
+0.!
+0/!
+00!
+01!
+12!
+03!
+04!
+05!
+16!
+07!
+08!
+09!
+0:!
+0;!
+0<!
+0=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+1F!
+0G!
+0H!
+0I!
+0J!
+0K!
+0L!
+1M!
+0N!
+1O!
+0P!
+0Q!
+0R!
+0S!
+0T!
+1U!
+0V!
+0W!
+0X!
+0Y!
+1Z!
+1[!
+1\!
+0]!
+0^!
+0_!
+1`!
+0a!
+0b!
+0c!
+0d!
+0e!
+0f!
+0g!
+0h!
+0i!
+0j!
+0k!
+1l!
+0m!
+0n!
+0o!
+0p!
+0q!
+0r!
+1s!
+0t!
+0u!
+0v!
+0w!
+1x!
+0y!
+0z!
+1{!
+0|!
+0}!
+1~!
+0!"
+0""
+0#"
+1$"
+0%"
+0&"
+0'"
+0("
+0)"
+1*"
+0+"
+1,"
+1-"
+1."
+0/"
+00"
+01"
+02"
+03"
+04"
+05"
+06"
+07"
+08"
+09"
+0:"
+0;"
+0<"
+0="
+0>"
+0?"
+1@"
+0A"
+0B"
+0C"
+0D"
+1E"
+1F"
+0G"
+1H"
+0I"
+0J"
+1K"
+0L"
+0M"
+1N"
+0O"
+0P"
+0Q"
+0R"
+1S"
+0T"
+0U"
+0V"
+0W"
+0X"
+0Y"
+0Z"
+0["
+0\"
+0]"
+0^"
+0_"
+0`"
+0a"
+1b"
+1c"
+1d"
+1e"
+0f"
+0g"
+0h"
+0i"
+0j"
+0k"
+0l"
+0m"
+0n"
+0o"
+0p"
+0q"
+0r"
+1s"
+0t"
+0u"
+0v"
+0w"
+0x"
+0y"
+0z"
+0{"
+0|"
+0}"
+0~"
+0!#
+0"#
+0##
+1$#
+1%#
+0&#
+1'#
+0(#
+1)#
+1*#
+0+#
+1,#
+0-#
+1.#
+1/#
+10#
+11#
+12#
+13#
+14#
+15#
+06#
+07#
+18#
+09#
+1:#
+1;#
+1<#
+1=#
+0>#
+0?#
+0@#
+0A#
+0B#
+0C#
+0D#
+0E#
+0F#
+0G#
+0H#
+0I#
+0J#
+0K#
+0M#
+0L#
+0P#
+0O#
+0N#
+0R#
+0Q#
+0U#
+0T#
+0S#
+0X#
+0W#
+0V#
+z`#
+0_#
+0^#
+0]#
+0\#
+0[#
+0Z#
+0Y#
+zh#
+zg#
+zf#
+0e#
+0d#
+0c#
+0b#
+0a#
+$end
+#20000
+0"
+02!
+0[
+#30000
+1$
+1=!
+1[
+0-"
+0O!
+#40000
+1"
+12!
+0[
+1I"
+1G"
+0l!
+1h!
+0H"
+10"
+0*"
+0{!
+0[!
+1q!
+1n!
+1w"
+1}!
+1x"
+0~!
+#60000
+0"
+02!
+1[
+#80000
+1"
+12!
+0[
+0I"
+1/"
+1W#
+1X#
+1l!
+0h!
+1n"
+0F"
+1-"
+1k!
+0n!
+1m!
+0K"
+1n!
+#90000
+0!
+06!
+1[
+#100000
+0"
+02!
+0[
+#120000
+1"
+12!
+1[
+0G"
+0/"
+1o"
+1M"
+1D"
+00"
+1*"
+1{!
+1[!
+1F"
+1h
+1.
+0N"
+0F"
+1+"
+0w"
+0}!
+0."
+0x"
+1~!
+#140000
+0"
+02!
+0[
+#160000
+1"
+12!
+1[
+#180000
+0$
+0"
+0=!
+02!
+0[
+1K"
+1O!
+#200000
+b10 -
+1"
+15!
+12!
+1[
+#220000
+0"
+02!
+0[
+#240000
+1"
+12!
+1[
+#260000
+0"
+02!
+0[
+#280000
+1"
+12!
+1[
+#300000
+0"
+02!
+0[
+#320000
+1"
+12!
+1[
+#340000
+0"
+02!
+0[
+#350000
+b0 -
+05!
+1[
+#360000
+1"
+12!
+0[
+#380000
+0"
+02!
+1[
+#400000
+1"
+12!
+0[
+#420000
+0"
+02!
+1[
+#440000
+1"
+12!
+0[
+#460000
+0"
+02!
+1[
+#480000
+1"
+12!
+0[
+#500000
+0"
+02!
+1[
+#520000
+1"
+12!
+0[
+#540000
+0"
+02!
+1[
+#560000
+1"
+12!
+0[
+#580000
+0"
+02!
+1[
+#600000
+1"
+12!
+0[
+#620000
+0"
+02!
+1[
+#640000
+1"
+12!
+0[
+#660000
+0"
+02!
+1[
+#680000
+1"
+12!
+0[
+#700000
+0"
+02!
+1[
+#720000
+1"
+12!
+0[
+#740000
+0"
+02!
+1[
+#760000
+1"
+12!
+0[
+#780000
+0"
+02!
+1[
+#800000
+1"
+12!
+0[
+#820000
+0"
+02!
+1[
+#840000
+1"
+12!
+0[
+#860000
+0"
+02!
+1[
+#880000
+1"
+12!
+0[
+#900000
+0"
+02!
+1[
+#920000
+1"
+12!
+0[
+#940000
+0"
+02!
+1[
+#960000
+1"
+12!
+0[
+#980000
+0"
+02!
+1[
+#1000000

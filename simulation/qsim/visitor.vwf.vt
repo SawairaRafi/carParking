@@ -1,0 +1,1063 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/20/2022 19:03:00"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    car_parking_system
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module car_parking_system_vlg_sample_tst(
+	back_sensor,
+	clk,
+	front_sensor,
+	level1_movement,
+	level2_movement,
+	level3_movement,
+	password,
+	push_btn_clk,
+	rs10,
+	rst,
+	user_name,
+	user_type,
+	vehicle_type,
+	sampler_tx
+);
+input  back_sensor;
+input  clk;
+input  front_sensor;
+input  level1_movement;
+input  level2_movement;
+input  level3_movement;
+input [1:0] password;
+input  push_btn_clk;
+input  rs10;
+input  rst;
+input [1:0] user_name;
+input  user_type;
+input [2:0] vehicle_type;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(back_sensor or clk or front_sensor or level1_movement or level2_movement or level3_movement or password or push_btn_clk or rs10 or rst or user_name or user_type or vehicle_type)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module car_parking_system_vlg_check_tst (
+	backGateOpens,
+	cathode0,
+	cathode1,
+	cathode2,
+	cathode3,
+	gateOpens,
+	lcd_db,
+	lcd_e,
+	lcd_rs,
+	lcd_rw,
+	level,
+	noslot,
+	slotAvail,
+	sampler_rx
+);
+input  backGateOpens;
+input [6:0] cathode0;
+input [6:0] cathode1;
+input [6:0] cathode2;
+input [6:0] cathode3;
+input  gateOpens;
+input [7:0] lcd_db;
+input  lcd_e;
+input  lcd_rs;
+input  lcd_rw;
+input [1:0] level;
+input  noslot;
+input  slotAvail;
+input sampler_rx;
+
+reg  backGateOpens_expected;
+reg [6:0] cathode0_expected;
+reg [6:0] cathode1_expected;
+reg [6:0] cathode2_expected;
+reg [6:0] cathode3_expected;
+reg  gateOpens_expected;
+reg [7:0] lcd_db_expected;
+reg  lcd_e_expected;
+reg  lcd_rs_expected;
+reg  lcd_rw_expected;
+reg [1:0] level_expected;
+reg  noslot_expected;
+reg  slotAvail_expected;
+
+reg  backGateOpens_prev;
+reg [6:0] cathode0_prev;
+reg [6:0] cathode1_prev;
+reg [6:0] cathode2_prev;
+reg [6:0] cathode3_prev;
+reg  gateOpens_prev;
+reg [7:0] lcd_db_prev;
+reg  lcd_e_prev;
+reg  lcd_rs_prev;
+reg  lcd_rw_prev;
+reg [1:0] level_prev;
+reg  noslot_prev;
+reg  slotAvail_prev;
+
+reg  backGateOpens_expected_prev;
+reg [6:0] cathode0_expected_prev;
+reg [6:0] cathode1_expected_prev;
+reg [6:0] cathode2_expected_prev;
+reg [6:0] cathode3_expected_prev;
+reg  gateOpens_expected_prev;
+reg [1:0] level_expected_prev;
+reg  noslot_expected_prev;
+reg  slotAvail_expected_prev;
+
+reg  last_backGateOpens_exp;
+reg [6:0] last_cathode0_exp;
+reg [6:0] last_cathode1_exp;
+reg [6:0] last_cathode2_exp;
+reg [6:0] last_cathode3_exp;
+reg  last_gateOpens_exp;
+reg [1:0] last_level_exp;
+reg  last_noslot_exp;
+reg  last_slotAvail_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:13] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 13'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	backGateOpens_prev = backGateOpens;
+	cathode0_prev = cathode0;
+	cathode1_prev = cathode1;
+	cathode2_prev = cathode2;
+	cathode3_prev = cathode3;
+	gateOpens_prev = gateOpens;
+	lcd_db_prev = lcd_db;
+	lcd_e_prev = lcd_e;
+	lcd_rs_prev = lcd_rs;
+	lcd_rw_prev = lcd_rw;
+	level_prev = level;
+	noslot_prev = noslot;
+	slotAvail_prev = slotAvail;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	backGateOpens_expected_prev = backGateOpens_expected;
+	cathode0_expected_prev = cathode0_expected;
+	cathode1_expected_prev = cathode1_expected;
+	cathode2_expected_prev = cathode2_expected;
+	cathode3_expected_prev = cathode3_expected;
+	gateOpens_expected_prev = gateOpens_expected;
+	level_expected_prev = level_expected;
+	noslot_expected_prev = noslot_expected;
+	slotAvail_expected_prev = slotAvail_expected;
+end
+
+
+
+// expected backGateOpens
+initial
+begin
+	backGateOpens_expected = 1'bX;
+end 
+// expected cathode0[ 6 ]
+initial
+begin
+	cathode0_expected[6] = 1'bX;
+end 
+// expected cathode0[ 5 ]
+initial
+begin
+	cathode0_expected[5] = 1'bX;
+end 
+// expected cathode0[ 4 ]
+initial
+begin
+	cathode0_expected[4] = 1'bX;
+end 
+// expected cathode0[ 3 ]
+initial
+begin
+	cathode0_expected[3] = 1'bX;
+end 
+// expected cathode0[ 2 ]
+initial
+begin
+	cathode0_expected[2] = 1'bX;
+end 
+// expected cathode0[ 1 ]
+initial
+begin
+	cathode0_expected[1] = 1'bX;
+end 
+// expected cathode0[ 0 ]
+initial
+begin
+	cathode0_expected[0] = 1'bX;
+end 
+// expected cathode1[ 6 ]
+initial
+begin
+	cathode1_expected[6] = 1'bX;
+end 
+// expected cathode1[ 5 ]
+initial
+begin
+	cathode1_expected[5] = 1'bX;
+end 
+// expected cathode1[ 4 ]
+initial
+begin
+	cathode1_expected[4] = 1'bX;
+end 
+// expected cathode1[ 3 ]
+initial
+begin
+	cathode1_expected[3] = 1'bX;
+end 
+// expected cathode1[ 2 ]
+initial
+begin
+	cathode1_expected[2] = 1'bX;
+end 
+// expected cathode1[ 1 ]
+initial
+begin
+	cathode1_expected[1] = 1'bX;
+end 
+// expected cathode1[ 0 ]
+initial
+begin
+	cathode1_expected[0] = 1'bX;
+end 
+// expected cathode2[ 6 ]
+initial
+begin
+	cathode2_expected[6] = 1'bX;
+end 
+// expected cathode2[ 5 ]
+initial
+begin
+	cathode2_expected[5] = 1'bX;
+end 
+// expected cathode2[ 4 ]
+initial
+begin
+	cathode2_expected[4] = 1'bX;
+end 
+// expected cathode2[ 3 ]
+initial
+begin
+	cathode2_expected[3] = 1'bX;
+end 
+// expected cathode2[ 2 ]
+initial
+begin
+	cathode2_expected[2] = 1'bX;
+end 
+// expected cathode2[ 1 ]
+initial
+begin
+	cathode2_expected[1] = 1'bX;
+end 
+// expected cathode2[ 0 ]
+initial
+begin
+	cathode2_expected[0] = 1'bX;
+end 
+// expected cathode3[ 6 ]
+initial
+begin
+	cathode3_expected[6] = 1'bX;
+end 
+// expected cathode3[ 5 ]
+initial
+begin
+	cathode3_expected[5] = 1'bX;
+end 
+// expected cathode3[ 4 ]
+initial
+begin
+	cathode3_expected[4] = 1'bX;
+end 
+// expected cathode3[ 3 ]
+initial
+begin
+	cathode3_expected[3] = 1'bX;
+end 
+// expected cathode3[ 2 ]
+initial
+begin
+	cathode3_expected[2] = 1'bX;
+end 
+// expected cathode3[ 1 ]
+initial
+begin
+	cathode3_expected[1] = 1'bX;
+end 
+// expected cathode3[ 0 ]
+initial
+begin
+	cathode3_expected[0] = 1'bX;
+end 
+
+// expected gateOpens
+initial
+begin
+	gateOpens_expected = 1'bX;
+end 
+// expected level[ 1 ]
+initial
+begin
+	level_expected[1] = 1'bX;
+end 
+// expected level[ 0 ]
+initial
+begin
+	level_expected[0] = 1'bX;
+end 
+
+// expected noslot
+initial
+begin
+	noslot_expected = 1'bX;
+end 
+
+// expected slotAvail
+initial
+begin
+	slotAvail_expected = 1'bX;
+end 
+// generate trigger
+always @(backGateOpens_expected or backGateOpens or cathode0_expected or cathode0 or cathode1_expected or cathode1 or cathode2_expected or cathode2 or cathode3_expected or cathode3 or gateOpens_expected or gateOpens or lcd_db_expected or lcd_db or lcd_e_expected or lcd_e or lcd_rs_expected or lcd_rs or lcd_rw_expected or lcd_rw or level_expected or level or noslot_expected or noslot or slotAvail_expected or slotAvail)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected backGateOpens = %b | expected cathode0 = %b | expected cathode1 = %b | expected cathode2 = %b | expected cathode3 = %b | expected gateOpens = %b | expected lcd_db = %b | expected lcd_e = %b | expected lcd_rs = %b | expected lcd_rw = %b | expected level = %b | expected noslot = %b | expected slotAvail = %b | ",backGateOpens_expected_prev,cathode0_expected_prev,cathode1_expected_prev,cathode2_expected_prev,cathode3_expected_prev,gateOpens_expected_prev,lcd_db_expected_prev,lcd_e_expected_prev,lcd_rs_expected_prev,lcd_rw_expected_prev,level_expected_prev,noslot_expected_prev,slotAvail_expected_prev);
+	$display("| real backGateOpens = %b | real cathode0 = %b | real cathode1 = %b | real cathode2 = %b | real cathode3 = %b | real gateOpens = %b | real lcd_db = %b | real lcd_e = %b | real lcd_rs = %b | real lcd_rw = %b | real level = %b | real noslot = %b | real slotAvail = %b | ",backGateOpens_prev,cathode0_prev,cathode1_prev,cathode2_prev,cathode3_prev,gateOpens_prev,lcd_db_prev,lcd_e_prev,lcd_rs_prev,lcd_rw_prev,level_prev,noslot_prev,slotAvail_prev);
+`endif
+	if (
+		( backGateOpens_expected_prev !== 1'bx ) && ( backGateOpens_prev !== backGateOpens_expected_prev )
+		&& ((backGateOpens_expected_prev !== last_backGateOpens_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port backGateOpens :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", backGateOpens_expected_prev);
+		$display ("     Real value = %b", backGateOpens_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_backGateOpens_exp = backGateOpens_expected_prev;
+	end
+	if (
+		( cathode0_expected_prev[0] !== 1'bx ) && ( cathode0_prev[0] !== cathode0_expected_prev[0] )
+		&& ((cathode0_expected_prev[0] !== last_cathode0_exp[0]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode0[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode0_expected_prev);
+		$display ("     Real value = %b", cathode0_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_cathode0_exp[0] = cathode0_expected_prev[0];
+	end
+	if (
+		( cathode0_expected_prev[1] !== 1'bx ) && ( cathode0_prev[1] !== cathode0_expected_prev[1] )
+		&& ((cathode0_expected_prev[1] !== last_cathode0_exp[1]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode0[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode0_expected_prev);
+		$display ("     Real value = %b", cathode0_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_cathode0_exp[1] = cathode0_expected_prev[1];
+	end
+	if (
+		( cathode0_expected_prev[2] !== 1'bx ) && ( cathode0_prev[2] !== cathode0_expected_prev[2] )
+		&& ((cathode0_expected_prev[2] !== last_cathode0_exp[2]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode0[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode0_expected_prev);
+		$display ("     Real value = %b", cathode0_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_cathode0_exp[2] = cathode0_expected_prev[2];
+	end
+	if (
+		( cathode0_expected_prev[3] !== 1'bx ) && ( cathode0_prev[3] !== cathode0_expected_prev[3] )
+		&& ((cathode0_expected_prev[3] !== last_cathode0_exp[3]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode0[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode0_expected_prev);
+		$display ("     Real value = %b", cathode0_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_cathode0_exp[3] = cathode0_expected_prev[3];
+	end
+	if (
+		( cathode0_expected_prev[4] !== 1'bx ) && ( cathode0_prev[4] !== cathode0_expected_prev[4] )
+		&& ((cathode0_expected_prev[4] !== last_cathode0_exp[4]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode0[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode0_expected_prev);
+		$display ("     Real value = %b", cathode0_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_cathode0_exp[4] = cathode0_expected_prev[4];
+	end
+	if (
+		( cathode0_expected_prev[5] !== 1'bx ) && ( cathode0_prev[5] !== cathode0_expected_prev[5] )
+		&& ((cathode0_expected_prev[5] !== last_cathode0_exp[5]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode0[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode0_expected_prev);
+		$display ("     Real value = %b", cathode0_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_cathode0_exp[5] = cathode0_expected_prev[5];
+	end
+	if (
+		( cathode0_expected_prev[6] !== 1'bx ) && ( cathode0_prev[6] !== cathode0_expected_prev[6] )
+		&& ((cathode0_expected_prev[6] !== last_cathode0_exp[6]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode0[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode0_expected_prev);
+		$display ("     Real value = %b", cathode0_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_cathode0_exp[6] = cathode0_expected_prev[6];
+	end
+	if (
+		( cathode1_expected_prev[0] !== 1'bx ) && ( cathode1_prev[0] !== cathode1_expected_prev[0] )
+		&& ((cathode1_expected_prev[0] !== last_cathode1_exp[0]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode1[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode1_expected_prev);
+		$display ("     Real value = %b", cathode1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_cathode1_exp[0] = cathode1_expected_prev[0];
+	end
+	if (
+		( cathode1_expected_prev[1] !== 1'bx ) && ( cathode1_prev[1] !== cathode1_expected_prev[1] )
+		&& ((cathode1_expected_prev[1] !== last_cathode1_exp[1]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode1[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode1_expected_prev);
+		$display ("     Real value = %b", cathode1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_cathode1_exp[1] = cathode1_expected_prev[1];
+	end
+	if (
+		( cathode1_expected_prev[2] !== 1'bx ) && ( cathode1_prev[2] !== cathode1_expected_prev[2] )
+		&& ((cathode1_expected_prev[2] !== last_cathode1_exp[2]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode1[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode1_expected_prev);
+		$display ("     Real value = %b", cathode1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_cathode1_exp[2] = cathode1_expected_prev[2];
+	end
+	if (
+		( cathode1_expected_prev[3] !== 1'bx ) && ( cathode1_prev[3] !== cathode1_expected_prev[3] )
+		&& ((cathode1_expected_prev[3] !== last_cathode1_exp[3]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode1[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode1_expected_prev);
+		$display ("     Real value = %b", cathode1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_cathode1_exp[3] = cathode1_expected_prev[3];
+	end
+	if (
+		( cathode1_expected_prev[4] !== 1'bx ) && ( cathode1_prev[4] !== cathode1_expected_prev[4] )
+		&& ((cathode1_expected_prev[4] !== last_cathode1_exp[4]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode1[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode1_expected_prev);
+		$display ("     Real value = %b", cathode1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_cathode1_exp[4] = cathode1_expected_prev[4];
+	end
+	if (
+		( cathode1_expected_prev[5] !== 1'bx ) && ( cathode1_prev[5] !== cathode1_expected_prev[5] )
+		&& ((cathode1_expected_prev[5] !== last_cathode1_exp[5]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode1[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode1_expected_prev);
+		$display ("     Real value = %b", cathode1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_cathode1_exp[5] = cathode1_expected_prev[5];
+	end
+	if (
+		( cathode1_expected_prev[6] !== 1'bx ) && ( cathode1_prev[6] !== cathode1_expected_prev[6] )
+		&& ((cathode1_expected_prev[6] !== last_cathode1_exp[6]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode1[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode1_expected_prev);
+		$display ("     Real value = %b", cathode1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_cathode1_exp[6] = cathode1_expected_prev[6];
+	end
+	if (
+		( cathode2_expected_prev[0] !== 1'bx ) && ( cathode2_prev[0] !== cathode2_expected_prev[0] )
+		&& ((cathode2_expected_prev[0] !== last_cathode2_exp[0]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode2[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode2_expected_prev);
+		$display ("     Real value = %b", cathode2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_cathode2_exp[0] = cathode2_expected_prev[0];
+	end
+	if (
+		( cathode2_expected_prev[1] !== 1'bx ) && ( cathode2_prev[1] !== cathode2_expected_prev[1] )
+		&& ((cathode2_expected_prev[1] !== last_cathode2_exp[1]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode2[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode2_expected_prev);
+		$display ("     Real value = %b", cathode2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_cathode2_exp[1] = cathode2_expected_prev[1];
+	end
+	if (
+		( cathode2_expected_prev[2] !== 1'bx ) && ( cathode2_prev[2] !== cathode2_expected_prev[2] )
+		&& ((cathode2_expected_prev[2] !== last_cathode2_exp[2]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode2[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode2_expected_prev);
+		$display ("     Real value = %b", cathode2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_cathode2_exp[2] = cathode2_expected_prev[2];
+	end
+	if (
+		( cathode2_expected_prev[3] !== 1'bx ) && ( cathode2_prev[3] !== cathode2_expected_prev[3] )
+		&& ((cathode2_expected_prev[3] !== last_cathode2_exp[3]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode2[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode2_expected_prev);
+		$display ("     Real value = %b", cathode2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_cathode2_exp[3] = cathode2_expected_prev[3];
+	end
+	if (
+		( cathode2_expected_prev[4] !== 1'bx ) && ( cathode2_prev[4] !== cathode2_expected_prev[4] )
+		&& ((cathode2_expected_prev[4] !== last_cathode2_exp[4]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode2[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode2_expected_prev);
+		$display ("     Real value = %b", cathode2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_cathode2_exp[4] = cathode2_expected_prev[4];
+	end
+	if (
+		( cathode2_expected_prev[5] !== 1'bx ) && ( cathode2_prev[5] !== cathode2_expected_prev[5] )
+		&& ((cathode2_expected_prev[5] !== last_cathode2_exp[5]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode2[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode2_expected_prev);
+		$display ("     Real value = %b", cathode2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_cathode2_exp[5] = cathode2_expected_prev[5];
+	end
+	if (
+		( cathode2_expected_prev[6] !== 1'bx ) && ( cathode2_prev[6] !== cathode2_expected_prev[6] )
+		&& ((cathode2_expected_prev[6] !== last_cathode2_exp[6]) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode2[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode2_expected_prev);
+		$display ("     Real value = %b", cathode2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_cathode2_exp[6] = cathode2_expected_prev[6];
+	end
+	if (
+		( cathode3_expected_prev[0] !== 1'bx ) && ( cathode3_prev[0] !== cathode3_expected_prev[0] )
+		&& ((cathode3_expected_prev[0] !== last_cathode3_exp[0]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode3[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode3_expected_prev);
+		$display ("     Real value = %b", cathode3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_cathode3_exp[0] = cathode3_expected_prev[0];
+	end
+	if (
+		( cathode3_expected_prev[1] !== 1'bx ) && ( cathode3_prev[1] !== cathode3_expected_prev[1] )
+		&& ((cathode3_expected_prev[1] !== last_cathode3_exp[1]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode3[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode3_expected_prev);
+		$display ("     Real value = %b", cathode3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_cathode3_exp[1] = cathode3_expected_prev[1];
+	end
+	if (
+		( cathode3_expected_prev[2] !== 1'bx ) && ( cathode3_prev[2] !== cathode3_expected_prev[2] )
+		&& ((cathode3_expected_prev[2] !== last_cathode3_exp[2]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode3[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode3_expected_prev);
+		$display ("     Real value = %b", cathode3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_cathode3_exp[2] = cathode3_expected_prev[2];
+	end
+	if (
+		( cathode3_expected_prev[3] !== 1'bx ) && ( cathode3_prev[3] !== cathode3_expected_prev[3] )
+		&& ((cathode3_expected_prev[3] !== last_cathode3_exp[3]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode3[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode3_expected_prev);
+		$display ("     Real value = %b", cathode3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_cathode3_exp[3] = cathode3_expected_prev[3];
+	end
+	if (
+		( cathode3_expected_prev[4] !== 1'bx ) && ( cathode3_prev[4] !== cathode3_expected_prev[4] )
+		&& ((cathode3_expected_prev[4] !== last_cathode3_exp[4]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode3[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode3_expected_prev);
+		$display ("     Real value = %b", cathode3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_cathode3_exp[4] = cathode3_expected_prev[4];
+	end
+	if (
+		( cathode3_expected_prev[5] !== 1'bx ) && ( cathode3_prev[5] !== cathode3_expected_prev[5] )
+		&& ((cathode3_expected_prev[5] !== last_cathode3_exp[5]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode3[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode3_expected_prev);
+		$display ("     Real value = %b", cathode3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_cathode3_exp[5] = cathode3_expected_prev[5];
+	end
+	if (
+		( cathode3_expected_prev[6] !== 1'bx ) && ( cathode3_prev[6] !== cathode3_expected_prev[6] )
+		&& ((cathode3_expected_prev[6] !== last_cathode3_exp[6]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cathode3[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cathode3_expected_prev);
+		$display ("     Real value = %b", cathode3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_cathode3_exp[6] = cathode3_expected_prev[6];
+	end
+	if (
+		( gateOpens_expected_prev !== 1'bx ) && ( gateOpens_prev !== gateOpens_expected_prev )
+		&& ((gateOpens_expected_prev !== last_gateOpens_exp) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port gateOpens :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", gateOpens_expected_prev);
+		$display ("     Real value = %b", gateOpens_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_gateOpens_exp = gateOpens_expected_prev;
+	end
+	if (
+		( level_expected_prev[0] !== 1'bx ) && ( level_prev[0] !== level_expected_prev[0] )
+		&& ((level_expected_prev[0] !== last_level_exp[0]) ||
+			on_first_change[11])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port level[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", level_expected_prev);
+		$display ("     Real value = %b", level_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[11] = 1'b0;
+		last_level_exp[0] = level_expected_prev[0];
+	end
+	if (
+		( level_expected_prev[1] !== 1'bx ) && ( level_prev[1] !== level_expected_prev[1] )
+		&& ((level_expected_prev[1] !== last_level_exp[1]) ||
+			on_first_change[11])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port level[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", level_expected_prev);
+		$display ("     Real value = %b", level_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[11] = 1'b0;
+		last_level_exp[1] = level_expected_prev[1];
+	end
+	if (
+		( noslot_expected_prev !== 1'bx ) && ( noslot_prev !== noslot_expected_prev )
+		&& ((noslot_expected_prev !== last_noslot_exp) ||
+			on_first_change[12])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port noslot :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", noslot_expected_prev);
+		$display ("     Real value = %b", noslot_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[12] = 1'b0;
+		last_noslot_exp = noslot_expected_prev;
+	end
+	if (
+		( slotAvail_expected_prev !== 1'bx ) && ( slotAvail_prev !== slotAvail_expected_prev )
+		&& ((slotAvail_expected_prev !== last_slotAvail_exp) ||
+			on_first_change[13])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port slotAvail :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", slotAvail_expected_prev);
+		$display ("     Real value = %b", slotAvail_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[13] = 1'b0;
+		last_slotAvail_exp = slotAvail_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module car_parking_system_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg back_sensor;
+reg clk;
+reg front_sensor;
+reg level1_movement;
+reg level2_movement;
+reg level3_movement;
+reg [1:0] password;
+reg push_btn_clk;
+reg rs10;
+reg rst;
+reg [1:0] user_name;
+reg user_type;
+reg [2:0] vehicle_type;
+// wires                                               
+wire backGateOpens;
+wire [6:0] cathode0;
+wire [6:0] cathode1;
+wire [6:0] cathode2;
+wire [6:0] cathode3;
+wire gateOpens;
+wire [7:0] lcd_db;
+wire lcd_e;
+wire lcd_rs;
+wire lcd_rw;
+wire [1:0] level;
+wire noslot;
+wire slotAvail;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+car_parking_system i1 (
+// port map - connection between master ports and signals/registers   
+	.back_sensor(back_sensor),
+	.backGateOpens(backGateOpens),
+	.cathode0(cathode0),
+	.cathode1(cathode1),
+	.cathode2(cathode2),
+	.cathode3(cathode3),
+	.clk(clk),
+	.front_sensor(front_sensor),
+	.gateOpens(gateOpens),
+	.lcd_db(lcd_db),
+	.lcd_e(lcd_e),
+	.lcd_rs(lcd_rs),
+	.lcd_rw(lcd_rw),
+	.level(level),
+	.level1_movement(level1_movement),
+	.level2_movement(level2_movement),
+	.level3_movement(level3_movement),
+	.noslot(noslot),
+	.password(password),
+	.push_btn_clk(push_btn_clk),
+	.rs10(rs10),
+	.rst(rst),
+	.slotAvail(slotAvail),
+	.user_name(user_name),
+	.user_type(user_type),
+	.vehicle_type(vehicle_type)
+);
+
+// back_sensor
+initial
+begin
+	back_sensor = 1'b1;
+	back_sensor = #90000 1'b0;
+end 
+
+// clk
+initial
+begin
+	clk = 1'b1;
+	# 20000;
+	repeat(24)
+	begin
+		clk = 1'b0;
+		clk = #20000 1'b1;
+		# 20000;
+	end
+	clk = 1'b0;
+end 
+
+// front_sensor
+initial
+begin
+	front_sensor = 1'b0;
+end 
+
+// level1_movement
+initial
+begin
+	level1_movement = 1'b0;
+	level1_movement = #30000 1'b1;
+	level1_movement = #150000 1'b0;
+end 
+
+// level2_movement
+initial
+begin
+	level2_movement = 1'b0;
+end 
+
+// level3_movement
+initial
+begin
+	level3_movement = 1'b0;
+end 
+// password[ 1 ]
+initial
+begin
+	password[1] = 1'b0;
+end 
+// password[ 0 ]
+initial
+begin
+	password[0] = 1'b0;
+end 
+
+// push_btn_clk
+initial
+begin
+	push_btn_clk = 1'b0;
+end 
+
+// rs10
+initial
+begin
+	rs10 = 1'b0;
+end 
+
+// rst
+initial
+begin
+	rst = 1'b0;
+end 
+// user_name[ 1 ]
+initial
+begin
+	user_name[1] = 1'b0;
+end 
+// user_name[ 0 ]
+initial
+begin
+	user_name[0] = 1'b0;
+end 
+
+// user_type
+initial
+begin
+	user_type = 1'b0;
+end 
+// vehicle_type[ 2 ]
+initial
+begin
+	vehicle_type[2] = 1'b0;
+end 
+// vehicle_type[ 1 ]
+initial
+begin
+	vehicle_type[1] = 1'b0;
+	vehicle_type[1] = #200000 1'b1;
+	vehicle_type[1] = #150000 1'b0;
+end 
+// vehicle_type[ 0 ]
+initial
+begin
+	vehicle_type[0] = 1'b0;
+end 
+
+car_parking_system_vlg_sample_tst tb_sample (
+	.back_sensor(back_sensor),
+	.clk(clk),
+	.front_sensor(front_sensor),
+	.level1_movement(level1_movement),
+	.level2_movement(level2_movement),
+	.level3_movement(level3_movement),
+	.password(password),
+	.push_btn_clk(push_btn_clk),
+	.rs10(rs10),
+	.rst(rst),
+	.user_name(user_name),
+	.user_type(user_type),
+	.vehicle_type(vehicle_type),
+	.sampler_tx(sampler)
+);
+
+car_parking_system_vlg_check_tst tb_out(
+	.backGateOpens(backGateOpens),
+	.cathode0(cathode0),
+	.cathode1(cathode1),
+	.cathode2(cathode2),
+	.cathode3(cathode3),
+	.gateOpens(gateOpens),
+	.lcd_db(lcd_db),
+	.lcd_e(lcd_e),
+	.lcd_rs(lcd_rs),
+	.lcd_rw(lcd_rw),
+	.level(level),
+	.noslot(noslot),
+	.slotAvail(slotAvail),
+	.sampler_rx(sampler)
+);
+endmodule
+
