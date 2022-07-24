@@ -1,0 +1,21 @@
+
+State Machine - |car_parking_system|state
+Name state.backGateOpen state.user3 state.user2 state.user1 state.user0 state.freeSlots state.gateOpen state.vanCharge state.carCharge state.bikeCharge state.slotsLevel_3 state.slotsLevel_2 state.slotsLevel_1 state.vehicleType state.visitor state.vip state.userType state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.userType 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.vip 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.visitor 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.vehicleType 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.slotsLevel_1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.slotsLevel_2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.slotsLevel_3 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.bikeCharge 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.carCharge 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.vanCharge 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.gateOpen 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.freeSlots 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.user0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.user1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.user2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.user3 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.backGateOpen 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

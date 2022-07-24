@@ -1,0 +1,148 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+# Date created = 13:56:00  June 01, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		car_parking_system_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY car_parking_system
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:56:00  JUNE 01, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VHDL_FILE car_parking_system.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE sevensegment.vhd
+set_global_assignment -name VHDL_FILE mypackage.vhd
+set_global_assignment -name VHDL_FILE lcd_controller.vhd
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "D:/dsd/car_parking_system/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+
+set_location_assignment PIN_M21 -to clk
+set_location_assignment PIN_M5 -to lcd_db[7]
+set_location_assignment PIN_M3 -to lcd_db[6]
+set_location_assignment PIN_K2 -to lcd_db[5]
+set_location_assignment PIN_K1 -to lcd_db[4]
+set_location_assignment PIN_K7 -to lcd_db[3]
+set_location_assignment PIN_L2 -to lcd_db[2]
+set_location_assignment PIN_L1 -to lcd_db[1]
+set_location_assignment PIN_L3 -to lcd_db[0]
+set_location_assignment PIN_L4 -to lcd_e
+set_location_assignment PIN_M2 -to lcd_rs
+set_location_assignment PIN_M1 -to lcd_rw
+set_location_assignment PIN_M23 -to push_btn_clk
+set_location_assignment PIN_Y23 -to rst
+
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_H22 -to cathode0[6]
+set_location_assignment PIN_J22 -to cathode0[5]
+set_location_assignment PIN_L25 -to cathode0[4]
+set_location_assignment PIN_L26 -to cathode0[3]
+set_location_assignment PIN_E17 -to cathode0[2]
+set_location_assignment PIN_F22 -to cathode0[1]
+set_location_assignment PIN_G18 -to cathode0[0]
+set_location_assignment PIN_U24 -to cathode1[6]
+set_location_assignment PIN_U23 -to cathode1[5]
+set_location_assignment PIN_W25 -to cathode1[4]
+set_location_assignment PIN_W22 -to cathode1[3]
+set_location_assignment PIN_W21 -to cathode1[2]
+set_location_assignment PIN_Y22 -to cathode1[1]
+set_location_assignment PIN_M24 -to cathode1[0]
+set_location_assignment PIN_W28 -to cathode2[6]
+set_location_assignment PIN_W27 -to cathode2[5]
+set_location_assignment PIN_Y26 -to cathode2[4]
+set_location_assignment PIN_W26 -to cathode2[3]
+set_location_assignment PIN_Y25 -to cathode2[2]
+set_location_assignment PIN_AA26 -to cathode2[1]
+set_location_assignment PIN_AA25 -to cathode2[0]
+set_location_assignment PIN_Y19 -to cathode3[6]
+set_location_assignment PIN_AF23 -to cathode3[5]
+set_location_assignment PIN_AD24 -to cathode3[4]
+set_location_assignment PIN_AA21 -to cathode3[3]
+set_location_assignment PIN_AB20 -to cathode3[2]
+set_location_assignment PIN_U21 -to cathode3[1]
+set_location_assignment PIN_V21 -to cathode3[0]
+set_location_assignment PIN_AB28 -to front_sensor
+set_location_assignment PIN_AC28 -to back_sensor
+
+set_location_assignment PIN_G19 -to level[0]
+set_location_assignment PIN_F19 -to level[1]
+set_location_assignment PIN_F18 -to backGateOpens
+set_location_assignment PIN_E18 -to gateOpens
+set_location_assignment PIN_AD26 -to level1_movement
+set_location_assignment PIN_AB26 -to level2_movement
+set_location_assignment PIN_AC25 -to level3_movement
+set_location_assignment PIN_AB25 -to user_name[0]
+set_location_assignment PIN_AC24 -to user_name[1]
+set_location_assignment PIN_AB24 -to user_type
+set_location_assignment PIN_AB23 -to password[0]
+set_location_assignment PIN_AA24 -to password[1]
+set_location_assignment PIN_AA23 -to vehicle_type[0]
+set_location_assignment PIN_AA22 -to vehicle_type[1]
+set_location_assignment PIN_Y24 -to vehicle_type[2]
+set_location_assignment PIN_AC27 -to rs8
+set_location_assignment PIN_E21 -to noslot
+set_location_assignment PIN_E22 -to slotAvail
+set_global_assignment -name VECTOR_WAVEFORM_FILE visitor.vwf
+set_location_assignment PIN_AB19 -to cathode4[0]
+set_location_assignment PIN_AA19 -to cathode4[1]
+set_location_assignment PIN_AG21 -to cathode4[2]
+set_location_assignment PIN_AH21 -to cathode4[3]
+set_location_assignment PIN_AE19 -to cathode4[4]
+set_location_assignment PIN_AF19 -to cathode4[5]
+set_location_assignment PIN_AE18 -to cathode4[6]
+set_location_assignment PIN_AD18 -to cathode5[0]
+set_location_assignment PIN_AC18 -to cathode5[1]
+set_location_assignment PIN_AB18 -to cathode5[2]
+set_location_assignment PIN_AH19 -to cathode5[3]
+set_location_assignment PIN_AG19 -to cathode5[4]
+set_location_assignment PIN_AF18 -to cathode5[5]
+set_location_assignment PIN_AH18 -to cathode5[6]
+set_location_assignment PIN_AA17 -to cathode6[0]
+set_location_assignment PIN_AB16 -to cathode6[1]
+set_location_assignment PIN_AA16 -to cathode6[2]
+set_location_assignment PIN_AB17 -to cathode6[3]
+set_location_assignment PIN_AB15 -to cathode6[4]
+set_location_assignment PIN_AA15 -to cathode6[5]
+set_location_assignment PIN_AC17 -to cathode6[6]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
